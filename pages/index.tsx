@@ -11,17 +11,19 @@ const Index = () => {
   const [percentage, setPercentage] = useState(0);
   useInterval(
     () => {
-      if (percentage < 100) {
-        setPercentage(percentage + 20);
-      } else {
+      const newPercentage = percentage + 20;
+      if (newPercentage < 100) {
+        setPercentage(newPercentage);
+      } else if (newPercentage === 100) {
+        setPercentage(newPercentage);
         setPaused(true);
       }
     },
-    paused ? null : 1000,
-  )
+    paused ? null : 1000
+  );
   const playPauseButtonClick = () => {
-    if(percentage===100) {
-      setPercentage(0)
+    if (percentage === 100) {
+      setPercentage(0);
     }
     setPaused(!paused);
   };
@@ -35,7 +37,9 @@ const Index = () => {
       <Container>
         <Spacer />
         <CircularProgressBar width={100} height={100} percentage={percentage} />
-        <button onClick={playPauseButtonClick}>{paused ? 'play': 'pause'}</button>
+        <button onClick={playPauseButtonClick}>
+          {paused ? 'play' : 'pause'}
+        </button>
       </Container>
     </>
   );
