@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from 'react';
+import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
 const grey = '#d4d4d4';
@@ -68,7 +68,6 @@ const CircularProgressBar = ({
  percentage,
  width,
 }: Props) => {
-  const [randomId] = useState((Math.random() + 1).toString(36).substr(2, 8));
   const strokeWidth= 10;
   // SvgContainer centers the stroke width on the radius, subtract out so circle fits in square
   const radius = (width - strokeWidth) / 2;
@@ -82,7 +81,6 @@ const CircularProgressBar = ({
     <SvgContainer width={width} height={height} viewBox={viewBox}>
       <CircleBackground cx={width / 2} cy={height / 2} r={radius} strokeWidth={strokeWidth} />
       <CircleProgress
-        stroke={`url(#${randomId})`}
         cx={width / 2}
         cy={height / 2}
         r={radius}
