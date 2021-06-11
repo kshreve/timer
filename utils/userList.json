@@ -1,0 +1,32 @@
+[
+  {
+    "uuid": "1-1",
+    "username": "kshreve",
+    "email": "kshreve@gmail.com",
+    "name": "Kevin Shreve",
+    "instagram": "kshreve",
+    "premium": true
+  },
+  {
+    "uuid": "2-2",
+    "username": "wshreve",
+    "email": "kshreve@gmail.com",
+    "name": "Wesley Shreve",
+    "instagram": "wshreve",
+    "premium": true
+  },
+  {
+    "uuid": "3-3",
+    "username": "rshreve",
+    "email": "kshreve@gmail.com",
+    "name": "Shelby Shreve",
+    "instagram": "rshreve"
+  },
+  {
+    "uuid": "4-4",
+    "username": "bshreve",
+    "email": "kshreve@gmail.com",
+    "name": "b Shreve",
+    "instagram": "bshreve"
+  }
+]
