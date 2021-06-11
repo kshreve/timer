@@ -36,10 +36,15 @@ const Index = () => {
 
       <Container>
         <Spacer />
-        <CircularProgressBar width={100} height={100} percentage={percentage} />
-        <button onClick={playPauseButtonClick}>
-          {paused ? 'play' : 'pause'}
-        </button>
+        <div onClick={playPauseButtonClick}>
+          <CircularProgressBar
+            width={100}
+            height={100}
+            percentage={percentage}
+          />
+        </div>
+        {percentage !== 100 && <p>{paused ? 'paused' : 'playing'}</p>}
+        {percentage === 100 && <p>complete</p>}
       </Container>
     </>
   );
