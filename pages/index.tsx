@@ -1,17 +1,10 @@
 import Head from 'next/head';
-import useSWR from 'swr';
-import Link from 'next/link';
 
 import Container from 'components/grid/Container';
-import FlexContainer from 'components/FlexContainer';
 import Spacer from 'components/Spacer';
-import fetcher from 'utils/fetcher';
-import { getCanonicalUrlFromUser } from 'lib/users';
-
-import UserType from 'types/userType';
+import CircularProgressBar from "components/CircularProgressBar";
 
 const Index = () => {
-  const { data, error } = useSWR('/api/users', fetcher);
 
   return (
     <>
@@ -21,16 +14,7 @@ const Index = () => {
 
       <Container>
         <Spacer />
-        <FlexContainer>Look at our Great Users</FlexContainer>
-        <div>
-          {error && <div>failed to load users</div>}
-          {!data && <div>Loading users...</div>}
-          {data?.map((user: UserType) => (
-            <div key={user.name}>
-              <Link href={getCanonicalUrlFromUser(user)}>{user.name}</Link>
-            </div>
-          ))}
-        </div>
+        <CircularProgressBar width={100} height={100} percentage={100}/>
       </Container>
     </>
   );
