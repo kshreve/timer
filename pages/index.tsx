@@ -8,11 +8,11 @@ import useInterval from 'utils/useInterval';
 
 const Index = () => {
   const [paused, setPaused] = useState(true);
-  const [percentage, setPercentage] = useState(10);
+  const [percentage, setPercentage] = useState(0);
   useInterval(
     () => {
       if (percentage < 100) {
-        setPercentage(percentage + 10);
+        setPercentage(percentage + 20);
       } else {
         setPaused(true);
       }
@@ -20,6 +20,9 @@ const Index = () => {
     paused ? null : 1000,
   )
   const playPauseButtonClick = () => {
+    if(percentage===100) {
+      setPercentage(0)
+    }
     setPaused(!paused);
   };
 
