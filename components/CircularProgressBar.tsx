@@ -75,7 +75,7 @@ const CircularProgressBar = ({ height, percentage, width }: Props) => {
   const viewBox = `0 0 ${width} ${height}`;
   const circumference = Math.PI * radius * 2;
   const startLength = previousPercentage
-    ? (Math.min(percentage, previousPercentage) / 100) * circumference
+    ? (previousPercentage / 100) * circumference
     : 0;
   const fillLength = (percentage / 100) * circumference;
 
